@@ -1,8 +1,9 @@
 #include <iostream>
 using namespace std;
-int a[100], b[100], n;
-void dfs(int now, int tot, int dep, string ans, int stuck[100]) {
-    int tmp[100] = {0};
+string a[100], b[100];
+int n;
+void dfs(int now, int tot, int dep, string ans, string stuck[100]) {
+    string tmp[100];
     for (int i = 1; i <= tot; i++)
         tmp[i] = stuck[i];
     if (dep == n) {
@@ -10,7 +11,7 @@ void dfs(int now, int tot, int dep, string ans, int stuck[100]) {
         return;
     }
     if (tot) {
-        dfs(now, tot - 1, dep + 1, ans + to_string(tmp[tot]) + ' ', tmp);
+        dfs(now, tot - 1, dep + 1, ans + tmp[tot] + ' ', tmp);
     }
     if (now <= n) {
         tmp[tot + 1] = a[now];
