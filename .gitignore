@@ -34,3 +34,5 @@
 # zip
 *.zip
 *.rar
+
+tmp.cpp
